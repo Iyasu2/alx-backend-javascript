@@ -1,17 +1,13 @@
-'use strict';
+process.stdout.write('Welcome to Holberton School, what is your name?\n');
 
-const readline = require('readline');
+process.stdin.on('readable', () => {
+  const s = process.stdin.read();
 
-const rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout
+  if (s) {
+    process.stdout.write(`Your name is: ${s}`);
+  }
 });
 
-rl.question('Welcome to Holberton School, what is your name?\n', (name) => {
-  console.log(`Your name is: ${name}`);
-  rl.close();
-});
-
-rl.on('close', () => {
-  console.log('This important software is now closing\n');
+process.stdin.on('end', () => {
+  process.stdout.write('This important software is now closing\n');
 });
