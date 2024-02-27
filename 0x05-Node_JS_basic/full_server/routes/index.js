@@ -14,4 +14,5 @@ router.get('/students', StudentsController.getAllStudents);
 // Link the route /students/:major to the StudentsController for a specific major
 router.get('/students/:major', StudentsController.getAllStudentsByMajor);
 
+export default router;
 module.exports = router;
