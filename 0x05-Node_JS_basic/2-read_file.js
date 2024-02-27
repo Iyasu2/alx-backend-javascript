@@ -20,17 +20,19 @@ function countStudents(path) {
   console.log(`Number of students: ${lines.length}`);
 
   const fields = {};
-  lines.forEach((line) => {
+  for (const line of lines) {
     const student = line.split(',');
     const field = student[3];
     if (!fields[field]) {
       fields[field] = [];
     }
     fields[field].push(student[0]);
-  });
+  }
 
   for (const field in fields) {
-    console.log(`Number of students in ${field}: ${fields[field].length}. List: ${fields[field].join(', ')}`);
+    if (Object.prototype.hasOwnProperty.call(fields, field)) {
+      console.log(`Number of students in ${field}: ${fields[field].length}. List: ${fields[field].join(', ')}`);
+    }
   }
 }
 
