@@ -7,7 +7,6 @@ describe('getPaymentTokenFromAPI', () => {
       .then((result) => {
         expect(result).to.deep.equal({ data: 'Successful response from the API' });
         done(); // Call done to indicate the test is complete
-      })
-      .catch(done); // Call done with an error if the promise is rejected
+      });
   });
 });
