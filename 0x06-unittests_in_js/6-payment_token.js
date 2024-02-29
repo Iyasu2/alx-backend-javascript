@@ -1,4 +1,8 @@
-// Create a new function named getPaymentTokenFromAPI
+/**
+ * Create a new function named getPaymentTokenFromAPI.
+ * @param {boolean} success - Indicates whether the API call was successful.
+ * @returns {Promise<{ data: string } | void>} - A promise that resolves with the API response data (if successful) or an empty promise (if unsuccessful).
+ */
 function getPaymentTokenFromAPI(success) {
   if (success) {
     // Return a resolved promise with the specified data
